@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{585B2845-999F-4F76-9E6E-DB5F188CB7E4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BTS_3k2_PAV</RootNamespace>
+    <AssemblyName>BTS-3k2-PAV</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\Bug.cs" />
+    <Compile Include="Entidades\BugFiltros.cs" />
+    <Compile Include="Entidades\Criticidad.cs" />
+    <Compile Include="Entidades\EntidadBase.cs" />
+    <Compile Include="Entidades\Enums\EstadosDisponibles.cs" />
+    <Compile Include="Entidades\HistoricoBug.cs" />
+    <Compile Include="Entidades\Perfil.cs" />
+    <Compile Include="Entidades\Prioridad.cs" />
+    <Compile Include="Entidades\Estado.cs" />
+    <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="InterfacesDeUsuario\Bugs\FrmBugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Bugs\FrmBugs.Designer.cs">
+      <DependentUpon>FrmBugs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Bugs\FrmRegistrarBug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Bugs\FrmRegistrarBug.Designer.cs">
+      <DependentUpon>FrmRegistrarBug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\Bugs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bugs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\BugsConFiltros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\BugsConFiltros.Designer.cs">
+      <DependentUpon>BugsConFiltros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\BugsPorEstado\BugsPorEstadoDs.cs">
+      <DependentUpon>BugsPorEstadoDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\BugsPorEstado\BugsPorEstadoDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BugsPorEstadoDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\BugsPorEstado\FrmBugsPorEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\BugsPorEstado\FrmBugsPorEstado.Designer.cs">
+      <DependentUpon>FrmBugsPorEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuarios\FrmBajaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuarios\FrmBajaUsuario.Designer.cs">
+      <DependentUpon>FrmBajaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuarios\FrmEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuarios\FrmEditarUsuario.Designer.cs">
+      <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuarios\FrmRegistrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuarios\FrmRegistrarUsuario.Designer.cs">
+      <DependentUpon>FrmRegistrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuarios\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuarios\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Respositorios\BugsRepositorio.cs" />
+    <Compile Include="Respositorios\EstadosRespositorio.cs" />
+    <Compile Include="Respositorios\PrioridadesRespositorio.cs" />
+    <Compile Include="Respositorios\ProductosRespositorio.cs" />
+    <Compile Include="Respositorios\DBHelper.cs" />
+    <Compile Include="Respositorios\CriticidadesRespositorio.cs" />
+    <Compile Include="Respositorios\PerfilesRepositorio.cs" />
+    <Compile Include="Respositorios\ReportesRepositorio.cs" />
+    <Compile Include="Respositorios\UsuariosRepositorio.cs" />
+    <Compile Include="Servicios\BugsServicio.cs" />
+    <Compile Include="Servicios\EstadosServicio.cs" />
+    <Compile Include="Servicios\PrioridadesServicio.cs" />
+    <Compile Include="Servicios\ProductosServicio.cs" />
+    <Compile Include="Servicios\CriticidadesServicio.cs" />
+    <Compile Include="Servicios\PerfilesServicio.cs" />
+    <Compile Include="Servicios\ReportesServicio.cs" />
+    <Compile Include="Servicios\UsuariosServicio.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Utils\CombosUtils.cs" />
+    <EmbeddedResource Include="InterfacesDeUsuario\Bugs\FrmBugs.resx">
+      <DependentUpon>FrmBugs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Bugs\FrmRegistrarBug.resx">
+      <DependentUpon>FrmRegistrarBug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Reportes\BugsConFiltros.resx">
+      <DependentUpon>BugsConFiltros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Reportes\BugsPorEstado\BugsPorEstado.rdlc" />
+    <EmbeddedResource Include="InterfacesDeUsuario\Reportes\BugsPorEstado\FrmBugsPorEstado.resx">
+      <DependentUpon>FrmBugsPorEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Reportes\BugsPorFiltros.rdlc" />
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuarios\FrmBajaUsuario.resx">
+      <DependentUpon>FrmBajaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuarios\FrmEditarUsuario.resx">
+      <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuarios\FrmRegistrarUsuario.resx">
+      <DependentUpon>FrmRegistrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuarios\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="InterfacesDeUsuario\Reportes\Bugs.xsc">
+      <DependentUpon>Bugs.xsd</DependentUpon>
+    </None>
+    <None Include="InterfacesDeUsuario\Reportes\Bugs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Bugs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="InterfacesDeUsuario\Reportes\Bugs.xss">
+      <DependentUpon>Bugs.xsd</DependentUpon>
+    </None>
+    <None Include="InterfacesDeUsuario\Reportes\BugsPorEstado\BugsPorEstadoDs.xsc">
+      <DependentUpon>BugsPorEstadoDs.xsd</DependentUpon>
+    </None>
+    <None Include="InterfacesDeUsuario\Reportes\BugsPorEstado\BugsPorEstadoDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BugsPorEstadoDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="InterfacesDeUsuario\Reportes\BugsPorEstado\BugsPorEstadoDs.xss">
+      <DependentUpon>BugsPorEstadoDs.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Recusos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
